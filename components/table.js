@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { BiEdit, BiTrashAlt } from "react-icons/bi"
 
-export default function table() {
+export default function Table() {
   return (
     <table className="min-w-full table-auto">
         <thead>
