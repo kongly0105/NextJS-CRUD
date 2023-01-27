@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { BiUserPlus } from "react-icons/bi";
+import Table from '../components/table'
 
 export default function Home() {
   return (
@@ -10,7 +11,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className='py-5f'>
+      <main className='py-5'>
         <h1 className='text-xl md:text-5xl text-center fond-bold py-10'>Employee Management</h1>
         <div className='container mx-auto flex justify-between py-5 border-b'>
           <div className='left flex gap-3'>
@@ -21,10 +22,11 @@ export default function Home() {
               </span> 
             </button>
           </div>
-
           {/** collapsable form */}
-
-          {/** table */}
+        </div>
+        {/** table */}
+        <div className='container mx-auto'>
+          <Table />
         </div>
       </main>
     </section>
