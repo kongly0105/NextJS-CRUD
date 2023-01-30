@@ -30,7 +30,7 @@ export default function Table() {
             <tr className="bggray-50 text-center">
                 <td className="px-16 py-2 flex flex-row items-center"> 
                     <img src="#" alt="" />
-                    <span className="text-center ml-2 font-semibold">Daily Tuition</span>
+                    <span className="text-center ml-2 font-semibold">Bruce Lee</span>
                 </td>
                 <td className="px-16 py-2">
                     <span>kongpaly1995@gmail.com</span>
