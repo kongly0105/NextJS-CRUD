@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "name": "Kong Ly",
+        "avatar": "./images/download.jpeg",
+        "email": "kongly@gmail.com",
+        "salary": "25000",
+        "date": "2023-01-30",
+        "status": "Active"
+    },
+    {
+        "id": 2,
+        "name": "Mr Lee",
+        "avatar": "./images/girl1.jpg",
+        "email": "mrlee@gmail.com",
+        "salary": "25000",
+        "date": "2023-01-30",
+        "status": "Active"
+    },
+    {
+        "id": 3,
+        "name": "Bruce Lee",
+        "avatar": "./images/girl2.jpg",
+        "email": "brucelee@gmail.com",
+        "salary": "25000",
+        "date": "2023-01-30",
+        "status": "Active"
+    },
+    {
+        "id": 4,
+        "name": "Paly",
+        "avatar": "./images/girl3.jpeg",
+        "email": "paly@gmail.com",
+        "salary": "25000",
+        "date": "2023-01-30",
+        "status": "Active"
+    },
+    {
+        "id": 5,
+        "name": "Kong Paly",
+        "avatar": "./images/girl4.jpeg",
+        "email": "kongpaly@gmail.com",
+        "salary": "25000",
+        "date": "2023-01-30",
+        "status": "Active"
+    }
+]
