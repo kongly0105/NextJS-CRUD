@@ -15,7 +15,7 @@
         "email": "mrlee@gmail.com",
         "salary": "25000",
         "date": "2023-01-30",
-        "status": "Active"
+        "status": "InActive"
     },
     {
         "id": 3,
@@ -33,7 +33,7 @@
         "email": "paly@gmail.com",
         "salary": "25000",
         "date": "2023-01-30",
-        "status": "Active"
+        "status": "InActive"
     },
     {
         "id": 5,
