@@ -45,14 +45,16 @@ export default function Table() {
     )
 }
 
-function Tr({id, name, avatar, email, salary, date, status}){
+function Tr({_id, name, avatar, email, salary, date, status}){
 
     const visible = useSelector((state) => state.app.client.toggleForm);
     const dispatch = useDispatch()
     
     const onUpdate = () => {
         dispatch(toggleChangeAction())
-        console.log("visible", visible);
+        if(visible){
+            dispatch(updateAction(_id));
+        }
     }
 
     return (
