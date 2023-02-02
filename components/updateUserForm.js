@@ -3,7 +3,7 @@ import { BiBrush } from 'react-icons/bi'
 // import Success from './success'
 import Bug from './bug'
 import { useQuery, useMutation, useQueryClient } from "react-query"
-import { getUser, updateUser } from "../lib/helper"
+import { getUser, getUsers, updateUser } from "../lib/helper"
 
 
 export default function UpdateUserForm({formId, formData, setFormData}) {
@@ -12,7 +12,8 @@ export default function UpdateUserForm({formId, formData, setFormData}) {
     const {isLoading, isError, data, error} = useQuery(['users', formId], () => getUser(formId))
     const UpdateMutation = useMutation((newData) => updateUser(formId, newData), {
         onSuccess: async(data) => {
-            queryClient.setQueriesData('users', (old) => [data])
+            // queryClient.setQueriesData('users', (old) => [data])
+            queryClient.prefetchQuery('users', getUsers)
         }
     })
 
