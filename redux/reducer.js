@@ -13,7 +13,7 @@ export const ReducerSlice = createSlice({
             state.client.toggleForm = !state.client.toggleForm
         },
 
-        updateAction: (state, action) => {
+        updateAction:(state, action) => {
             state.client.formId = action.payload
         }
     }

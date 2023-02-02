@@ -3,7 +3,7 @@ import { BiEdit, BiTrashAlt } from "react-icons/bi";
 import { getUsers } from "../lib/helper";
 import { useQuery } from "react-query";
 import { useSelector, useDispatch } from "react-redux";
-import { toggleChangeAction } from '../redux/reducer'
+import { toggleChangeAction, updateAction } from '../redux/reducer'
 
 export default function Table() {
 
@@ -52,6 +52,7 @@ function Tr({_id, name, avatar, email, salary, date, status}){
     
     const onUpdate = () => {
         dispatch(toggleChangeAction())
+        
         if(visible){
             dispatch(updateAction(_id));
         }
