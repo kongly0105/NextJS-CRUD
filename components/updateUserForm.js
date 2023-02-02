@@ -14,12 +14,11 @@ export default function UpdateUserForm({formId, formData, setFormData}) {
     if(isError) return <div>Error</div>
 
     const { name, avatar, salary, date, email, status } = data;
-    const [firstname, lastname] = name ? name.split('') : formData;
-
+    const [firstname, lastname] = name ? name.split(' '):formData
+   
     const handleSubmit = (e) => {
         e.preventDefault();
-        if(Object.keys(formData).length == 0) return console.log("Don't have Form Data");
-        console.log("formData", formData);
+        let userName = `${formData.firstname ?? firstname} ${formData.lastname ?? lastname}`;
     }
 
     return (
