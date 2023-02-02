@@ -2,13 +2,19 @@ import { useReducer } from "react"
 import { BiBrush } from 'react-icons/bi'
 // import Success from './success'
 import Bug from './bug'
-import { useQuery } from "react-query"
-import { getUser } from "../lib/helper"
+import { useQuery, useMutation, useQueryClient } from "react-query"
+import { getUser, updateUser } from "../lib/helper"
 
 
 export default function UpdateUserForm({formId, formData, setFormData}) {
 
+    const queryClient =useQueryClient()
     const {isLoading, isError, data, error} = useQuery(['users', formId], () => getUser(formId))
+    const UpdateMutation = useMutation((newData) => updateUser(formId, newData), {
+        onSuccess: async(data) => {
+            queryClient.setQueriesData('users', (old) => [data])
+        }
+    })
 
     if(isLoading) return <div>Loading...!</div>
     if(isError) return <div>Error</div>
@@ -16,9 +22,12 @@ export default function UpdateUserForm({formId, formData, setFormData}) {
     const { name, avatar, salary, date, email, status } = data;
     const [firstname, lastname] = name ? name.split(' '):formData
    
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         let userName = `${formData.firstname ?? firstname} ${formData.lastname ?? lastname}`;
+        let updated = Object.assign({}, data, formData, {name:userName});
+        console.log("updated", updated);
+        await UpdateMutation.mutate(updated)
     }
 
     return (
